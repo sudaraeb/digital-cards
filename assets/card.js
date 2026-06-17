@@ -17,7 +17,6 @@
 
   document.title = c.name + ' | Digital Calling Card';
   var photoAbs = c.photo ? new URL(c.photo, window.location.href).href : '';
-  var cardUrl = window.location.href;
   var phones = c.phones || [];
 
   var telBtns = phones.map(function (p) {
@@ -69,7 +68,6 @@
       (c.website ? 'URL:' + c.website + '\n' : '') +
       (photoAbs ? 'PHOTO;VALUE=URI:' + photoAbs + '\n' : '') +
       'ADR;TYPE=WORK:;;' + v(c.street) + ';' + v(c.city) + ';' + v(c.region) + ';' + v(c.postalCode) + ';' + v(c.country) + '\n' +
-      'NOTE:Digital card: ' + cardUrl + '\n' +
       'END:VCARD';
     var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
     var a = document.createElement('a');

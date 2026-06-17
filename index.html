@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f2e23" />
+  <title>Digital Calling Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Digital Calling Cards</p>
+      <h1>The <em>Directory</em></h1>
+      <p>Choose a company to view its people. Scan a QR code or tap a card to save contact details to your phone in one touch.</p>
+    </header>
+
+    <section id="companyGrid" class="company-grid"></section>
+
+    <p class="footer">Tip: each company has its own folder &amp; QR code.</p>
+  </main>
+
+  <script src="assets/companies.js"></script>
+  <script>
+    (function () {
+      var grid = document.getElementById('companyGrid');
+      var list = window.COMPANIES || [];
+      if (!list.length) {
+        grid.outerHTML = '<div class="empty">No companies yet. Add one in <strong>assets/companies.js</strong>.</div>';
+        return;
+      }
+      function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      function initials(s){return String(s||'?').trim().split(/\s+/).slice(0,2).map(function(w){return w.charAt(0);}).join('').toUpperCase();}
+      list.forEach(function (co) {
+        var a = document.createElement('a');
+        a.className = 'company-card';
+        a.href = 'companies/' + encodeURIComponent(co.id) + '/index.html';
+        var brand = co.logo
+          ? '<span class="logo-box"><img src="' + esc(co.logo) + '" alt="' + esc(co.name) + ' logo" onerror="this.style.display=\'none\'"></span>'
+          : '<span class="logo-box"><span class="logo-initials">' + esc(initials(co.name)) + '</span></span>';
+        a.innerHTML = brand +
+          '<h2>' + esc(co.name) + '</h2>' +
+          '<p>' + esc(co.tagline || '') + '</p>' +
+          '<span class="go-btn">View team <span>&rarr;</span></span>';
+        grid.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -10,7 +10,12 @@
       (company.logo ? '<img class="brand-logo" src="' + esc(company.logo) + '" alt="' + esc(company.name) + ' logo" onerror="this.style.display=\'none\'">' : '') +
       '<p class="eyebrow">Digital Calling Cards</p>' +
       '<h1>' + esc(company.name) + '</h1>' +
-      (company.tagline ? '<p>' + esc(company.tagline) + '</p>' : '');
+      (company.tagline ? '<p>' + esc(company.tagline) + '</p>' : '') +
+      (company.services && company.services.length
+        ? '<ul class="chips">' + company.services.map(function (s) {
+            return '<li>' + esc(s) + '</li>';
+          }).join('') + '</ul>'
+        : '');
   }
   document.title = company.name + ' | Contacts';
 

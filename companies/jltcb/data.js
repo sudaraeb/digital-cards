@@ -9,7 +9,14 @@ window.COMPANY = {
   // Logo: a file in the photos/ folder (e.g. 'photos/logo.png')
   //       OR a full link (e.g. 'https://example.com/logo.png').
   //       Leave as '' to show no logo.
-  logo: 'https://jltcb.com/wp-content/uploads/2024/09/Mask-group.png'
+  logo: 'https://jltcb.com/wp-content/uploads/2024/09/Mask-group.png',
+  // Services: shown as chips on the directory and on each card.
+  //           Add or remove items freely (keep the commas between them).
+  services: [
+    'Customs Brokerage',
+    'Logistics',
+    'Global Trade Compliance Solutions'
+  ]
 };
 
 /* ============================================================

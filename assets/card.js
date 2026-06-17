@@ -37,6 +37,11 @@
     '</div>' +
     '<div class="body">' +
       (c.company ? '<p class="company">' + esc(c.company) + '</p>' : '') +
+      (company.services && company.services.length
+        ? '<ul class="chips">' + company.services.map(function (s) {
+            return '<li>' + esc(s) + '</li>';
+          }).join('') + '</ul>'
+        : '') +
       '<div class="actions">' +
         telBtns +
         (c.email ? '<a class="btn" href="mailto:' + esc(c.email) + '">✉️ Email</a>' : '') +

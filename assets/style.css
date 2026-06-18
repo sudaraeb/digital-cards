@@ -419,6 +419,15 @@ a { color: inherit; }
 .footer a { color: var(--accent-deep); text-decoration: none; font-weight: 700; }
 .footer a:hover { text-decoration: underline; }
 
+.site-credit {
+  text-align: center;
+  padding: 18px 20px calc(26px + env(safe-area-inset-bottom));
+  color: var(--muted);
+  font-size: 12px; font-weight: 500; line-height: 1.5;
+}
+.site-credit a { color: var(--accent-deep); text-decoration: none; font-weight: 700; }
+.site-credit a:hover { text-decoration: underline; }
+
 /* ---------- Staggered entrance ---------- */
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px); }

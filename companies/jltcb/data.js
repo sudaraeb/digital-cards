@@ -43,13 +43,41 @@ window.CONTACTS = [
     website: 'https://www.jltcb.com',
     photo: 'photos/anna.png',                    // file inside the photos/ folder
 
-    // Address (used for the directions / saved contact)
-    street: 'Suite 508, Pacific Centre, Quintin Paredes',
-    city: 'Binondo',
-    region: 'Metro Manila',
-    postalCode: '1006',
-    country: 'Philippines',
-    address: 'Suite 508, Pacific Centre, Quintin Paredes, Binondo, Metro Manila, Philippines 1006'
+    // ADDRESSES — one { ... } block per location. Each becomes a tappable
+    // link on the card that opens Google Maps / the phone's map app.
+    // "label" is optional (e.g. 'Head Office'). You can fill the structured
+    // street/city/region/postalCode/country fields (best for the saved
+    // contact), or just write a single "address" line — either works.
+    //
+    // For a PINPOINT map location, also add lat + lng (decimal degrees).
+    // When present, the map link uses the exact coordinates instead of
+    // searching the address text. To get them: open Google Maps, right-click
+    // the spot, and click the "lat, lng" numbers at the top to copy.
+    //   Example:  lat: 14.5995, lng: 120.9760
+    addresses: [
+      {
+        label: 'Head Office',
+        street: 'Suite 508, Pacific Centre, Quintin Paredes',
+        city: 'Binondo',
+        region: 'Metro Manila',
+        postalCode: '1006',
+        country: 'Philippines',
+        lat: '14.598577086455267',   // e.g. 14.5995  (leave '' to search by address text)
+        lng: '120.97581949061615'    // e.g. 120.9760
+
+      
+      },
+      {
+        label: 'Clark Office',
+        street: 'Room 104, Clark Welcome Center Office Suites, Berthaphil VIII Compound',
+        city: 'Clark Freeport Zone',
+        region: 'Pampanga',
+        postalCode: '2023',
+        country: 'Philippines',
+        lat: '15.167721226357182',
+        lng: '120.57143639814548'
+      }
+    ]
   }
 
   // ,{  <-- remove the // and copy a block above to add the next person

@@ -15,7 +15,19 @@
         ? '<ul class="chips">' + company.services.map(function (s) {
             return '<li>' + esc(s) + '</li>';
           }).join('') + '</ul>'
-        : '');
+        : '') +
+      '<button class="btn dir-share" type="button" id="dirShareBtn">🔗 Share via QR</button>';
+
+    var dirShareBtn = document.getElementById('dirShareBtn');
+    if (dirShareBtn && window.DCC && window.DCC.shareQr) {
+      dirShareBtn.addEventListener('click', function () {
+        window.DCC.shareQr({
+          url: window.location.href,
+          title: company.name,
+          subtitle: 'Scan to open this team directory'
+        });
+      });
+    }
   }
   document.title = company.name + ' | Contacts';
 

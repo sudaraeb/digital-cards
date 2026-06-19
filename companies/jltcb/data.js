@@ -38,8 +38,8 @@ window.CONTACTS = [
     lastName: 'Gangcuangco',
     title: 'Senior Sales Executive — Health & Wellness Global Trade Division',
     company: 'JLTCB',
-    email: 'annagangcuanco@jltcb.com',
-    phones: ['+639171788213', '+639195070424'], // one or more, comma separated
+    email: 'annagangcuangco@jltcb.com',
+    phones: ['+639171788213', '+639195704224'], // one or more, comma separated
     website: 'https://www.jltcb.com',
     photo: 'photos/anna.png',                    // file inside the photos/ folder
 

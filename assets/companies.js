@@ -13,6 +13,12 @@ window.COMPANIES = [
     name: 'JLTCB',               // shown on the landing page
     tagline: 'Health & Wellness Global Trade Division',
     logo: 'https://jltcb.com/wp-content/uploads/2024/09/Mask-group.png'   // small image (optional, leave '' for initials)
+  },
+  {
+    id: 'romblon',              // = the folder name inside /companies
+    name: 'Romblon Health Care Systems Inc.',
+    tagline: 'Practicing passion with compassion',
+    logo: 'photos/rhsi_with text.png'                     // small image (optional, leave '' for initials)
   }
 
   // ,{ id: 'acme', name: 'Acme Corp', tagline: 'Sales Team', logo: '' }
